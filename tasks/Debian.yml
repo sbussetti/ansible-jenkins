@@ -22,9 +22,9 @@
     - { src: "jenkins.j2", dest: "/etc/default/jenkins" }
   notify: Restart Jenkins
 
-- name: Ensure home dir exists
+- name: Ensure home path exists
   file:
-    path="{{ jenkins_home_dir }}"
+    path="{{ jenkins_home_path }}"
     user="{{ jenkins_user }}"
     group="{{ jenkins_group }}"
     state=directory
