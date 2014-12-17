@@ -25,7 +25,7 @@
 - name: Ensure home path exists
   file:
     path="{{ jenkins_home_path }}"
-    user="{{ jenkins_user }}"
+    owner="{{ jenkins_user }}"
     group="{{ jenkins_group }}"
     state=directory
     mode=0755
