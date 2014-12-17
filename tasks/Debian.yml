@@ -20,6 +20,13 @@
             mode=0644
   with_items:
     - { src: "jenkins.j2", dest: "/etc/default/jenkins" }
+  notify: Restart Jenkins
 
-- name: Restart Jenkins
-  service: name=jenkins state=restarted
+- name: Ensure home dir exists
+  file:
+    path="{{ jenkins_home_dir }}"
+    user="{{ jenkins_user }}"
+    group="{{ jenkins_group }}"
+    state=directory
+    mode=0755
+
