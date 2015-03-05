@@ -8,3 +8,4 @@ jenkins_java_path: /usr/bin/java
 # for proxying with apache/nginx
 jenkins_servlet_prefix: "/"
 jenkins_pidfile: /var/run/jenkins/jenkins.pid
+jenkins_java_args: -Djava.awt.headless=true
